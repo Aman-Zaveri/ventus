@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300&display=swap");
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js"
+      integrity="sha512-JPcRR8yFa8mmCsfrw4TNte1ZvF1e3+1SdGMslZvmrzDYxS69J7J49vkFL8u6u8PlPJK+H3voElBtUCzaXj+6ig=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-solid.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-regular.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-light.css"
+    />
+    <title>Ventus</title>
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+  </head>
+  <body>
+    <div class="loading">
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+    </div>
+    <div class="container">
+      <section class="top">
+        <h2>Ventus</h2>
+        <div class="right">
+          <form
+            class="autocomplete"
+            onsubmit="return false;"
+            autocomplete="off"
+          >
+            <input id="myInput" type="text" placeholder="Search..." />
+            <button class="search-button">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+          <button class="mode"><i class="fa-solid fa-moon"></i></button>
+        </div>
+      </section>
+      <section class="middle">
+        <div class="left">
+          <i class="fa-solid fa-sun-bright weather"></i>
+          <h3>13°</h3>
+          <span class="location">Mississauga, CA</span>
+        </div>
+        <div class="right">
+          <span class="time">7:50pm</span>
+          <span class="description">Sunset, Monday</span>
+        </div>
+      </section>
+      <section class="bottom">
+        <div class="left">
+          <div class="stats">
+            <div class="stats-left">
+              <div class="info">
+                <i class="fa-light fa-droplet-percent"></i>
+                <div class="text">
+                  <span class="topic">Humidity</span>
+                  <span id="humidity">39%</span>
+                </div>
+              </div>
+              <div class="info">
+                <i class="fa-light fa-wind"></i>
+                <div class="text">
+                  <span class="topic">Wind Speed</span>
+                  <span id="wind">39%</span>
+                </div>
+              </div>
+              <div class="info">
+                <i class="fa-light fa-brightness-low"></i>
+                <div class="text">
+                  <span class="topic">Pressure</span>
+                  <span id="pressure">39%</span>
+                </div>
+              </div>
+            </div>
+            <div class="line"></div>
+            <div class="stats-right">
+              <div class="info">
+                <i class="fa-light fa-temperature-sun"></i>
+                <div class="text">
+                  <span class="topic">Real Feel</span>
+                  <span id="real-feel">39%</span>
+                </div>
+              </div>
+              <div class="info">
+                <i class="fa-light fa-sunrise"></i>
+                <div class="text">
+                  <span class="topic">Sunrise</span>
+                  <span id="sunrise">39%</span>
+                </div>
+              </div>
+              <div class="info">
+                <i class="fa-light fa-sunset"></i>
+                <div class="text">
+                  <span class="topic">Sunset</span>
+                  <span id="sunset">39%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="rainfall">
+            <div class="bottom-left">
+              <span>Chance of Rain</span>
+              <span class="percentage">45%</span>
+            </div>
+            <div class="bottom-right">
+              <span>Precipitation</span>
+              <span class="amount">17mm</span>
+            </div>
+          </div>
+        </div>
+        <div class="right">
+          <canvas
+            class="chart"
+            id="lineChart"
+            height="210px"
+            width="650px"
+          ></canvas>
+          <div class="daily">
+            <div>
+              <span>MON</span>
+              <i class="fa-light fa-sun-bright daily-icon"></i>
+              <span class="temperature">13°</span>
+            </div>
+            <div class="line"></div>
+            <div>
+              <span>MON</span>
+              <i class="fa-light fa-sun-bright daily-icon"></i>
+              <span class="temperature">13°</span>
+            </div>
+            <div class="line"></div>
+            <div>
+              <span>MON</span>
+              <i class="fa-light fa-sun-bright daily-icon"></i>
+              <span class="temperature">13°</span>
+            </div>
+            <div class="line"></div>
+            <div>
+              <span>MON</span>
+              <i class="fa-light fa-sun-bright daily-icon"></i>
+              <span class="temperature">13°</span>
+            </div>
+            <div class="line"></div>
+            <div>
+              <span>MON</span>
+              <i class="fa-light fa-sun-bright daily-icon"></i>
+              <span class="temperature">13°</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
